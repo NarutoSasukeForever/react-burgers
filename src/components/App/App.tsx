@@ -8,14 +8,15 @@ function App() {
   return (
     <>
     <AppHeader/>
-      <div className={styles.flexContainer}>
-        <div>
+      <main className={styles.flexContainer}>
+         <div className={styles.flexColumn}>
           <BurgerIngredients/>
         </div>
+
         <div>
-          <BurgerConstructor/>
+        <BurgerConstructor/>
         </div>
-      </div>
+      </main>
     </>
   );
 }

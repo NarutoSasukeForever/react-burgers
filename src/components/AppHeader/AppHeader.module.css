@@ -1,3 +1,11 @@
+header {
+    background-color: '#1c1c21'
+}
+
+.leftSide {
+    display: flex;
+}
+
 nav ul {
     list-style-type: none;
     display: flex; 
