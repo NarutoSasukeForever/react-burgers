@@ -1,0 +1,33 @@
+.flexContainer {
+    margin-right: 40px;
+    margin-left: 100px;
+    max-width: 600px;
+}
+
+
+.tab {
+    display: flex;
+}
+
+.ingredients {
+    max-height: 90vh; 
+    overflow-y: auto; 
+}
+
+.food {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 50px;
+    position: relative;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.currency {
+    margin: 4px;
+}
+

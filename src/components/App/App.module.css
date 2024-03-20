@@ -1,0 +1,8 @@
+.flexContainer {
+  display: flex; 
+}
+
+.flexColumn {
+  flex: 1;
+  padding: 40px;
+}
