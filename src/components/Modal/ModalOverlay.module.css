@@ -1,19 +1,20 @@
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .modal {
   background-color: #1C1C21;
   border-radius: 8px;
   position: relative;
+  border-radius: 40px;
 }
 
 .image {
@@ -25,11 +26,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 120px 60px 120px 60px;
+  padding: 80px 60px 80px 60px;
 }
 
 .digits {
-  border: 2px solid #4C4CFF;
+  text-shadow: 2px 2px 8px #3333FF;
+  font-family: 'Iceland';
+  font-weight: 400;
+  font-size: 144px;
+  margin: 20px;
 }
 
 .closeButton {
