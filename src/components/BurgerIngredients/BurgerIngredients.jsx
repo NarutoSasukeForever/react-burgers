@@ -11,7 +11,7 @@ const BurgerIngredients = () => {
 
   return (
     <>
-      <section className='ml-25 mr-10'>
+      <section className={styles.flexContainer}>
           <section className='mb-10 mt-10'>
             <h1 className="text_type_main-large mb-5">Соберите бургер</h1>
               <div className={styles.tab}>

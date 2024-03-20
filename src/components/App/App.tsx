@@ -12,7 +12,6 @@ function App() {
          <div className={styles.flexColumn}>
           <BurgerIngredients/>
         </div>
-
         <div>
         <BurgerConstructor/>
         </div>

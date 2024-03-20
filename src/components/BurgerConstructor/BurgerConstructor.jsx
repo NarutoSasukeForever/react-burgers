@@ -7,7 +7,7 @@ import { DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import React from 'react'
 
 const BurgerConstructor = () => {
-  const topElements = data.filter(top => top.type === 'bun');
+  const topElements = data.filter(item => item.name === "Краторная булка N-200i");
   const mainElements = data.filter(item => item.type === 'main');
 
   return (
@@ -18,7 +18,7 @@ const BurgerConstructor = () => {
                 <ConstructorElement
                   type="top"
                   isLocked={true}
-                  text={item.name}
+                  text={`${item.name} (верх)`}
                   price={item.price}
                   thumbnail={item.image}
                 />
@@ -47,7 +47,7 @@ const BurgerConstructor = () => {
                 <ConstructorElement
                   type="bottom"
                   isLocked={true}
-                  text={item.name}
+                  text={`${item.name} (низ)`}
                   price={item.price}
                   thumbnail={item.image}
                 />
