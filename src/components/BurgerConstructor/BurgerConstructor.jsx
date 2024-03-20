@@ -1,14 +1,13 @@
 import styles from './BurgerConstructor.module.css'
-import data from '../../utils/data'; 
 import { ConstructorElement } from '@ya.praktikum/react-developer-burger-ui-components'
 import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import { Button } from '@ya.praktikum/react-developer-burger-ui-components'
 import { DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
-import React from 'react'
 
-const BurgerConstructor = () => {
-  const topElements = data.filter(item => item.name === "Краторная булка N-200i");
-  const mainElements = data.filter(item => item.type === 'main');
+const BurgerConstructor = ({ingredients}) => {
+  const topElements = ingredients.filter(item => item.name === "Краторная булка N-200i");
+  const bottomElements = ingredients.filter(item => item.name === "Краторная булка N-200i");
+  const mainElements = ingredients.filter(item => item.type === 'main');
 
   return (
     <section className={styles.container}>
@@ -42,7 +41,7 @@ const BurgerConstructor = () => {
         </div>
 
         <div className='mt-2'>
-        {topElements.map((item, index) => (
+        {bottomElements.map((item, index) => (
           <div key={index} className='mb-2'>
                 <ConstructorElement
                   type="bottom"
@@ -66,5 +65,3 @@ const BurgerConstructor = () => {
 }
 
 export default BurgerConstructor
-
-

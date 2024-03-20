@@ -7,7 +7,7 @@ import React from 'react'
 
 const AppHeader = () => {
   return (
-    <header className="p-4">
+  <header className="p-4">
     <nav>
       <ul>
         <div className={styles.leftSide}>

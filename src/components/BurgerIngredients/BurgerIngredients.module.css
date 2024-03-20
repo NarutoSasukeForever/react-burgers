@@ -1,9 +1,7 @@
 .flexContainer {
-    margin-right: 40px;
     margin-left: 100px;
     max-width: 600px;
 }
-
 
 .tab {
     display: flex;
@@ -17,7 +15,7 @@
 .food {
     display: flex;
     flex-wrap: wrap;
-    margin-right: 50px;
+    margin-right: 40px;
     position: relative;
 }
 

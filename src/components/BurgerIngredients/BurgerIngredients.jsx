@@ -1,13 +1,12 @@
 import { Tab, CurrencyIcon, Counter  } from '@ya.praktikum/react-developer-burger-ui-components'
 import styles from './BurgerIngredients.module.css'
-import data from '../../utils/data'; 
 import React from 'react'
 
-const BurgerIngredients = () => {
+const BurgerIngredients = ({ingredients}) => {
   const [current, setCurrent] = React.useState('one')
-  const bunItems = data.filter(item => item.type === "bun");
-  const sauceItems = data.filter(item => item.type === "sauce");
-  const mainItems = data.filter(item => item.type === "main");
+  const bunItems = ingredients.filter(item => item.type === "bun");
+  const sauceItems = ingredients.filter(item => item.type === "sauce");
+  const mainItems = ingredients.filter(item => item.type === "main");
 
   return (
     <>
@@ -67,6 +66,3 @@ const BurgerIngredients = () => {
 }
 
 export default BurgerIngredients
-
-
-
