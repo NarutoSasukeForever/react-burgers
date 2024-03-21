@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from './Modal'; 
+import PropTypes from 'prop-types'; 
 import styles from './ModalOverlay.module.css'; 
 
 const OrderDetails = ({ isOpen, onClose }) => {
@@ -17,6 +18,11 @@ const OrderDetails = ({ isOpen, onClose }) => {
       </div>
     </Modal>
   );
+};
+
+OrderDetails.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default OrderDetails;

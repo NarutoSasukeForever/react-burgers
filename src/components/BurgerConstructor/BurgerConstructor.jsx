@@ -1,4 +1,5 @@
 import styles from './BurgerConstructor.module.css'
+import PropTypes from 'prop-types';
 import { ConstructorElement, CurrencyIcon, Button, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import OrderDetails from '../Modal/OrderDetails'; 
 import React, { useState } from 'react';
@@ -69,5 +70,15 @@ const BurgerConstructor = ({ingredients}) => {
 </section>
   )
 }
+
+BurgerConstructor.propTypes = {
+  ingredients: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+  })).isRequired,
+};
 
 export default BurgerConstructor

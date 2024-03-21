@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Modal from './Modal'; 
 import styles from './IngredientDetails.module.css'; 
 
@@ -46,6 +47,19 @@ const IngredientDetails = ({ isOpen, onClose, ingredient }) => {
       </div>
     </Modal>
   );
+};
+
+IngredientDetails.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  ingredient: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    calories: PropTypes.number.isRequired,
+    proteins: PropTypes.number.isRequired,
+    fat: PropTypes.number.isRequired,
+    carbohydrates: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default IngredientDetails;
