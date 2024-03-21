@@ -1,6 +1,6 @@
 import styles from './BurgerConstructor.module.css'
 import { ConstructorElement, CurrencyIcon, Button, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
-import Modal from '../Modal/OrderDetails';
+import OrderDetails from '../Modal/OrderDetails'; 
 import React, { useState } from 'react';
 
 const BurgerConstructor = ({ingredients}) => {
@@ -64,7 +64,7 @@ const BurgerConstructor = ({ingredients}) => {
           <Button htmlType="button" type="primary" size="large" onClick={handleOrderClick}>
           Оформить заказ
           </Button>
-          <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+          <OrderDetails isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
 </section>
   )

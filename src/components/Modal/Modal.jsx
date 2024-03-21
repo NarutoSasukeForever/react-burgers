@@ -8,9 +8,6 @@ const Modal = ({ isOpen, onClose, children }) => {
   return ReactDOM.createPortal(
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeButton} onClick={onClose}>
-          <img src="./icon.png" alt="icon" />
-        </button>
         {children}
       </div>
     </div>,
