@@ -1,4 +1,4 @@
-import { Tab, CurrencyIcon, Counter  } from '@ya.praktikum/react-developer-burger-ui-components'
+import { Tab, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import PropTypes from 'prop-types';
 import styles from './BurgerIngredients.module.css'
 import React, { useState } from 'react';

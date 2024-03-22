@@ -19,14 +19,14 @@ function App() {
           throw new Error('Failed to fetch ingredients');
         }
         const data = await response.json();
-        setIngredients(data.data); 
-        setLoading(false); 
+        setIngredients(data.data);
         if (!data.success) {
           console.log('Request was not successful');
         }
       } catch (error) {
         setError(error.message);
-        setLoading(false); 
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -55,5 +55,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;

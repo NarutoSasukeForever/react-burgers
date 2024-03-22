@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ingredientType } from '../../utils/types.js';
 import Modal from './Modal'; 
 import styles from './IngredientDetails.module.css'; 
 
@@ -11,9 +12,6 @@ const IngredientDetails = ({ isOpen, onClose, ingredient }) => {
 
         <div className={styles.header}>
           <p className="text text_type_main-large">Детали ингредиента</p>
-          <button className={styles.closeButton} onClick={onClose}>
-          <img src="./icon.png" alt="icon" />
-          </button>
         </div>
 
         <div className={styles.picture}>
@@ -52,14 +50,7 @@ const IngredientDetails = ({ isOpen, onClose, ingredient }) => {
 IngredientDetails.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  ingredient: PropTypes.shape({
-    image: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    calories: PropTypes.number.isRequired,
-    proteins: PropTypes.number.isRequired,
-    fat: PropTypes.number.isRequired,
-    carbohydrates: PropTypes.number.isRequired,
-  }).isRequired,
+  ingredient: ingredientType.isRequired,
 };
 
 export default IngredientDetails;
