@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import styles from './App.module.css';
 import AppHeader from '../AppHeader/AppHeader.jsx';
 import BurgerIngredients from '../BurgerIngredients/BurgerIngredients';
@@ -56,10 +55,5 @@ function App() {
     </>
   );
 }
-
-App.propTypes = {
-  ingredients: PropTypes.array.isRequired,
-};
-
 
 export default App;

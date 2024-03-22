@@ -19,6 +19,12 @@
     position: relative;
 }
 
+.food > div {
+    width: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
 .price {
     display: flex;
     justify-content: center;
