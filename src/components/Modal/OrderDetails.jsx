@@ -7,9 +7,6 @@ const OrderDetails = ({ isOpen, onClose }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className={styles.content}>
-        <button className={styles.closeButton} onClick={onClose}>
-          <img src="./icon.png" alt="icon" />
-        </button>
         <p className={styles.digits}>034536</p>
         <p className="text text_type_main-small">индентификатор заказа</p>
         <img src="./done.png" alt="done" className={styles.image} />

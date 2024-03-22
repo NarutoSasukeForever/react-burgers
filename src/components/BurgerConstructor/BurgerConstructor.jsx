@@ -1,19 +1,16 @@
 import styles from './BurgerConstructor.module.css'
-import PropTypes from 'prop-types';
+import { ingredientType } from '../../utils/types.js';
 import { ConstructorElement, CurrencyIcon, Button, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import OrderDetails from '../Modal/OrderDetails'; 
-import React, { useState } from 'react';
+import { useModal } from '../../hooks/useModal';
+import PropTypes from 'prop-types';
 
 const BurgerConstructor = ({ingredients}) => {
   const topElements = ingredients.filter(item => item.name === "Краторная булка N-200i");
   const bottomElements = ingredients.filter(item => item.name === "Краторная булка N-200i");
   const mainElements = ingredients.filter(item => item.type === 'main');
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleOrderClick = () => {
-    setIsModalOpen(true); 
-  };
+  const { isModalOpen, openModal, closeModal } = useModal();
 
   return (
     <section className={styles.container}>
@@ -62,23 +59,17 @@ const BurgerConstructor = ({ingredients}) => {
       
         <div className={styles.buttonContainer}>
           <div className={styles.priceBottom}><p className="text text_type_digits-medium mr-1">610</p><CurrencyIcon type="primary" /></div>
-          <Button htmlType="button" type="primary" size="large" onClick={handleOrderClick}>
+          <Button htmlType="button" type="primary" size="large" onClick={openModal}>
           Оформить заказ
           </Button>
-          <OrderDetails isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+          <OrderDetails isOpen={isModalOpen} onClose={closeModal} />
         </div>
 </section>
   )
 }
 
 BurgerConstructor.propTypes = {
-  ingredients: PropTypes.arrayOf(PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-  })).isRequired,
+  ingredients: PropTypes.arrayOf(ingredientType).isRequired
 };
 
 export default BurgerConstructor

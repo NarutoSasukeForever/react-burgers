@@ -1,8 +1,12 @@
 import { Tab, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components'
-import PropTypes from 'prop-types';
+import { ingredientType } from '../../utils/types.js';
 import styles from './BurgerIngredients.module.css'
 import React, { useState } from 'react';
 import IngredientDetails from '../Modal/IngredientDetails'; 
+import { useModal } from '../../hooks/useModal';
+import Modal from '../Modal/Modal'; 
+import PropTypes from 'prop-types';
+
 
 const BurgerIngredients = ({ingredients}) => {
   const [current, setCurrent] = React.useState('one')
@@ -12,12 +16,11 @@ const BurgerIngredients = ({ingredients}) => {
   const sauceItems = ingredients.filter(item => item.type === "sauce");
   const mainItems = ingredients.filter(item => item.type === "main");
 
-  const handleIngredientClick = (ingredient) => {
-    setSelectedIngredient(ingredient);
-  };
+  const { isModalOpen, openModal, closeModal } = useModal();
 
-  const handleCloseModal = () => {
-    setSelectedIngredient(null);
+  const handleIngredientClick = (ingredients) => {
+    setSelectedIngredient(ingredients);
+    openModal();
   };
 
   return (
@@ -41,11 +44,11 @@ const BurgerIngredients = ({ingredients}) => {
           <div className={styles.ingredients}>
             <h1 className="text_type_main-medium mb-6">Булки</h1>
               <div className={styles.food}>
-              {bunItems.map(bun => (
-                  <div key={bun._id} onClick={() => handleIngredientClick(bun)}>
-                    <img src={bun.image} alt={bun.name}/>
-                    <div className={styles.price}><p className="text text_type_digits-default mr-1">{bun.price}</p><CurrencyIcon type="primary"/></div>
-                    <div><p className="text text_type_main-default">{bun.name}</p></div>
+              {bunItems.map(item => (
+                  <div key={item._id} onClick={() => handleIngredientClick(item)}>
+                    <img src={item.image} alt={item.name}/>
+                    <div className={styles.price}><p className="text text_type_digits-default mr-1">{item.price}</p><CurrencyIcon type="primary"/></div>
+                    <div><p className="text text_type_main-default">{item.name}</p></div>
                   </div>
                 ))}
               </div>
@@ -73,21 +76,25 @@ const BurgerIngredients = ({ingredients}) => {
               </div>
           </div>
       </section>
-      {selectedIngredient && (
-        <IngredientDetails isOpen={true} onClose={handleCloseModal} ingredient={selectedIngredient} />
+
+      {isModalOpen && (
+      <Modal  
+        title={'Детали ингредиента'}  
+        onClose={closeModal}>  
+        <IngredientDetails currentIngredient={selectedIngredient} /> 
+      </Modal>
       )}
     </>
   )
 }
 
 BurgerIngredients.propTypes = {
-  ingredients: PropTypes.arrayOf(PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-  })).isRequired,
+  ingredients: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      quantity: PropTypes.number,
+    })
+  ).isRequired,
 };
 
 export default BurgerIngredients

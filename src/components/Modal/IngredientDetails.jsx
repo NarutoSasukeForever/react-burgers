@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ingredientType } from '../../utils/types.js';
 import Modal from './Modal'; 
 import styles from './IngredientDetails.module.css'; 
 
-
-const IngredientDetails = ({ isOpen, onClose, ingredient }) => {
+const IngredientDetails = ({ isOpen, onClose, currentIngredient }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className={styles.content}>
@@ -15,29 +13,29 @@ const IngredientDetails = ({ isOpen, onClose, ingredient }) => {
         </div>
 
         <div className={styles.picture}>
-          <img src={ingredient.image} alt={ingredient.name} className={styles.foodImage} />
-          <p className="text text_type_main-medium mb-8 mt-4">{ingredient.name}</p>
+          <img src={currentIngredient.image} alt={currentIngredient.name} className={styles.foodImage} />
+          <p className="text text_type_main-medium mb-8 mt-4">{currentIngredient.name}</p>
         </div>
 
         <div className={styles.Ingredients}>
           <div>
-            <p className="text text_type_main-default text_color_inactive">Калории,ккал:</p>
-            <p className="text text_type_digits-default text_color_inactive">{ingredient.calories}</p>
+            <p className="text text_type_main-default text_color_inactive">Калории, ккал:</p>
+            <p className="text text_type_digits-default text_color_inactive">{currentIngredient.calories}</p>
           </div>
 
           <div>
-            <p className="text text_type_main-default text_color_inactive">Белки,г:</p>
-            <p className="text text_type_digits-default text_color_inactive">{ingredient.proteins}</p>
+            <p className="text text_type_main-default text_color_inactive">Белки, г:</p>
+            <p className="text text_type_digits-default text_color_inactive">{currentIngredient.proteins}</p>
           </div>
 
           <div>
-            <p className="text text_type_main-default text_color_inactive">Жиры,г:</p>
-            <p className="text text_type_digits-default text_color_inactive">{ingredient.fat}</p>
+            <p className="text text_type_main-default text_color_inactive">Жиры, г:</p>
+            <p className="text text_type_digits-default text_color_inactive">{currentIngredient.fat}</p>
           </div>
 
           <div>
-            <p className="text text_type_main-default text_color_inactive">Углеводы,г:</p>
-            <p className="text text_type_digits-default text_color_inactive">{ingredient.carbohydrates}</p>
+            <p className="text text_type_main-default text_color_inactive">Углеводы, г:</p>
+            <p className="text text_type_digits-default text_color_inactive">{currentIngredient.carbohydrates}</p>
           </div>
 
         </div>
@@ -50,7 +48,7 @@ const IngredientDetails = ({ isOpen, onClose, ingredient }) => {
 IngredientDetails.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  ingredient: ingredientType.isRequired,
+  currentIngredient: PropTypes.object.isRequired,
 };
 
 export default IngredientDetails;
