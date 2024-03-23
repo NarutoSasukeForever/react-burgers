@@ -1,7 +1,7 @@
 import styles from './BurgerConstructor.module.css'
 import { ingredientType } from '../../utils/types.js';
 import { ConstructorElement, CurrencyIcon, Button, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
-import OrderDetails from '../Modal/OrderDetails'; 
+import OrderDetails from './OrderDetails'; 
 import { useModal } from '../../hooks/useModal';
 import PropTypes from 'prop-types';
 import { useState } from 'react';

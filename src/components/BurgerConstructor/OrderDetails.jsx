@@ -1,7 +1,6 @@
 import React from 'react';
-import Modal from './Modal'; 
 import PropTypes from 'prop-types'; 
-import styles from './ModalOverlay.module.css'; 
+import styles from './OrderDetails.module.css'; 
 
 const OrderDetails = () => {
   return (

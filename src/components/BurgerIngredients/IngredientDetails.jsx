@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Modal from './Modal'; 
-import styles from './IngredientDetails.module.css'; 
+import styles from './IngredientDetails.module.css'
 
 const IngredientDetails = ({ currentIngredient }) => {
   return (

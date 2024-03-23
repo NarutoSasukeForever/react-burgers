@@ -8,37 +8,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  z-index: -1;
+  z-index: 1; 
 }
 
 .modal {
-  border-radius: 8px;
-  position: relative;
-  border-radius: 40px;
+  background-color: #1c1c21;
   position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.image {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 80px 60px 80px 60px;
-}
-
-.digits {
-  text-shadow: 2px 2px 8px #3333FF;
-  font-family: 'Iceland';
-  font-weight: 400;
-  font-size: 144px;
-  margin: 20px;
+  border-radius: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  z-index: 2;
 }
 
 .closeButton {
