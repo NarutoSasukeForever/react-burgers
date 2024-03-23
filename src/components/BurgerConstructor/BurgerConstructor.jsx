@@ -14,7 +14,7 @@ const BurgerConstructor = ({ingredients}) => {
 
   const [order, setOrder] = useState(false);
 
-  const { isModalOpen, openModal, closeModal } = useModal();
+  const { isModalOpen, closeModal } = useModal();
 
   return (
     <section className={styles.container}>

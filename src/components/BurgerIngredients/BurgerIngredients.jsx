@@ -1,10 +1,7 @@
-
 import { Tab, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components'
-import { ingredientType } from '../../utils/types.js';
 import styles from './BurgerIngredients.module.css'
 import React, { useState } from 'react';
 import IngredientDetails from './IngredientDetails'; 
-import { useModal } from '../../hooks/useModal';
 import Modal from '../Modal/Modal'; 
 import PropTypes from 'prop-types';
 
@@ -15,8 +12,6 @@ const BurgerIngredients = ({ingredients}) => {
   const bunItems = ingredients.filter(item => item.type === "bun");
   const sauceItems = ingredients.filter(item => item.type === "sauce");
   const mainItems = ingredients.filter(item => item.type === "main");
-
-  const { isModalOpen, openModal, closeModal } = useModal();
 
   const handleIngredientClick = (ingredients) => {
     setSelectedIngredient(ingredients);
