@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import Modal from './Modal'; 
 import styles from './IngredientDetails.module.css'; 
 
-const IngredientDetails = ({ isOpen, onClose, currentIngredient }) => {
+const IngredientDetails = ({ currentIngredient }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
       <div className={styles.content}>
 
         <div className={styles.header}>
@@ -41,7 +40,6 @@ const IngredientDetails = ({ isOpen, onClose, currentIngredient }) => {
         </div>
 
       </div>
-    </Modal>
   );
 };
 

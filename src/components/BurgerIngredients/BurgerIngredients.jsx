@@ -1,3 +1,4 @@
+
 import { Tab, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components'
 import { ingredientType } from '../../utils/types.js';
 import styles from './BurgerIngredients.module.css'
@@ -20,7 +21,6 @@ const BurgerIngredients = ({ingredients}) => {
 
   const handleIngredientClick = (ingredients) => {
     setSelectedIngredient(ingredients);
-    openModal();
   };
 
   return (
@@ -77,10 +77,10 @@ const BurgerIngredients = ({ingredients}) => {
           </div>
       </section>
 
-      {isModalOpen && (
+      {selectedIngredient && (
       <Modal  
         title={'Детали ингредиента'}  
-        onClose={closeModal}>  
+        onClose={() => setSelectedIngredient(null)}>  
         <IngredientDetails currentIngredient={selectedIngredient} /> 
       </Modal>
       )}

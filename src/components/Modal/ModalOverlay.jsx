@@ -2,12 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ModalOverlay.module.css';
 
-const ModalOverlay = ({ onClose, children }) => {
+const ModalOverlay = ({ onClose }) => {
   return (
     <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        {children}
-      </div>
     </div>
   );
 };

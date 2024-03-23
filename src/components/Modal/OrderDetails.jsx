@@ -3,9 +3,8 @@ import Modal from './Modal';
 import PropTypes from 'prop-types'; 
 import styles from './ModalOverlay.module.css'; 
 
-const OrderDetails = ({ isOpen, onClose }) => {
+const OrderDetails = () => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
       <div className={styles.content}>
         <p className={styles.digits}>034536</p>
         <p className="text text_type_main-small">индентификатор заказа</p>
@@ -13,7 +12,6 @@ const OrderDetails = ({ isOpen, onClose }) => {
         <p className="text text_type_main-small mb-2">Ваш заказ начали готовить</p>
         <p className="text text_type_main-small text_color_inactive">Дождитесь готовности на орбитальной станции</p>
       </div>
-    </Modal>
   );
 };
 

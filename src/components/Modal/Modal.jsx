@@ -5,7 +5,7 @@ import styles from './ModalOverlay.module.css';
 import ModalOverlay from './ModalOverlay';
 import { CloseIcon  } from '@ya.praktikum/react-developer-burger-ui-components'
 
-const Modal = ({ isOpen, onClose, children }) => {
+const Modal = ({ onClose, children }) => {
   useEffect(() => {  
     function closeByEscape(evt) {  
       if(evt.key === 'Escape') {  
@@ -18,18 +18,17 @@ const Modal = ({ isOpen, onClose, children }) => {
       }  
 
   }, []) 
-  
-  if (!isOpen) return null;
 
   return ReactDOM.createPortal(
-    <ModalOverlay onClose={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+    <div>
+      <div className={styles.modal}>
         <button className={styles.closeButton} onClick={onClose}>
           <CloseIcon type="primary"  />
         </button>
         {children}
       </div>
-    </ModalOverlay>,
+      <ModalOverlay onClose={onClose}/>
+    </div>,
     document.getElementById('modal-root')
   );
 };

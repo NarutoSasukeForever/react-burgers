@@ -4,11 +4,15 @@ import { ConstructorElement, CurrencyIcon, Button, DragIcon } from '@ya.praktiku
 import OrderDetails from '../Modal/OrderDetails'; 
 import { useModal } from '../../hooks/useModal';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import Modal from '../Modal/Modal';
 
 const BurgerConstructor = ({ingredients}) => {
   const topElements = ingredients.filter(item => item.name === "Краторная булка N-200i");
   const bottomElements = ingredients.filter(item => item.name === "Краторная булка N-200i");
   const mainElements = ingredients.filter(item => item.type === 'main');
+
+  const [order, setOrder] = useState(false);
 
   const { isModalOpen, openModal, closeModal } = useModal();
 
@@ -59,11 +63,15 @@ const BurgerConstructor = ({ingredients}) => {
       
         <div className={styles.buttonContainer}>
           <div className={styles.priceBottom}><p className="text text_type_digits-medium mr-1">610</p><CurrencyIcon type="primary" /></div>
-          <Button htmlType="button" type="primary" size="large" onClick={openModal}>
+          <Button htmlType="button" type="primary" size="large" onClick={() => setOrder(true)}>
           Оформить заказ
           </Button>
-          <OrderDetails isOpen={isModalOpen} onClose={closeModal} />
         </div>
+        {order && (
+          <Modal onClose={() => setOrder(false)}>
+            <OrderDetails isOpen={isModalOpen} onClose={closeModal} />
+          </Modal>
+        )}
 </section>
   )
 }
