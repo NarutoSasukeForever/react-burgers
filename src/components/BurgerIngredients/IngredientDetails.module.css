@@ -1,0 +1,29 @@
+.content {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Ingredients {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+header {
+    background-color: #1c1c21
+}
+
+.leftSide {
+    display: flex;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+  
+nav a {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex; 
+    align-items: center; 
+}
