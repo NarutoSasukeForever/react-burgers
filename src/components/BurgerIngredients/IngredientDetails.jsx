@@ -43,8 +43,6 @@ const IngredientDetails = ({ currentIngredient }) => {
 };
 
 IngredientDetails.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
   currentIngredient: PropTypes.object.isRequired,
 };
 

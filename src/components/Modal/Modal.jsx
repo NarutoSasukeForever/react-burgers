@@ -34,7 +34,6 @@ const Modal = ({ onClose, children }) => {
 };
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   children: PropTypes.node.isRequired,
 };
