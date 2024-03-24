@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types'; 
 import styles from './OrderDetails.module.css'; 
 
 const OrderDetails = () => {
@@ -12,11 +11,6 @@ const OrderDetails = () => {
         <p className="text text_type_main-small text_color_inactive">Дождитесь готовности на орбитальной станции</p>
       </div>
   );
-};
-
-OrderDetails.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
 };
 
 export default OrderDetails;
